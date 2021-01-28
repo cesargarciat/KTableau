@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -34,6 +35,11 @@ namespace KTableau.DAL.models
 
         public byte[] RowVersion { get; set; }
 
+
+        // NP (to N)
+        public List<Team> Team { get; set; }
+
+    
 
     }
 }

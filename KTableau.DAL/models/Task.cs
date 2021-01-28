@@ -43,5 +43,7 @@ namespace KTableau.DAL.models
         // NP: Task's user 
         public User TaskUser { get; set; }
 
+        public Project Project { get; set; }
+
     }
 }
