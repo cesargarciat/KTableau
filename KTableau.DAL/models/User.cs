@@ -37,7 +37,7 @@ namespace KTableau.DAL.models
 
 
         // NP (to N)
-        public List<Team> Team { get; set; }
+        public virtual ICollection<Team> Team { get; set; }
 
     
 

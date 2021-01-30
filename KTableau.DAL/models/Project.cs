@@ -30,8 +30,8 @@ namespace KTableau.DAL.models
         public byte[] RowVersion { get; set; }
 
         // Navigation properties (relationship to Team)
-        public Team Team{ get; set; }
+        public virtual Team Team{ get; set; }
 
-        public List<Task> Tasks { get; set; }
+        public ICollection<TaskProject> Tasks { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace KTableau.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<Transition> Transitions { get; set; }
         public DbSet<Team> Teams { get; set; }
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskProject> Tasks { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Note> Notes { get; set; }
 
@@ -59,16 +59,16 @@ namespace KTableau.DAL
             modelBuilder.Entity<Team>().HasOne(p => p.User).WithMany(p => p.Team).HasForeignKey("UserId");
 
             // Entity Task
-            modelBuilder.Entity<Task>().HasKey(p => p.TaskId);
-            modelBuilder.Entity<Task>().HasIndex(p => p.ProjectId);
-            modelBuilder.Entity<Task>().HasIndex(p => p.State);
-            modelBuilder.Entity<Task>().Property(p => p.TaskId).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Task>().Property(p => p.RowVersion).IsRowVersion().ValueGeneratedOnAddOrUpdate();
+            modelBuilder.Entity<TaskProject>().HasKey(p => p.TaskId);
+            modelBuilder.Entity<TaskProject>().HasIndex(p => p.ProjectId);
+            modelBuilder.Entity<TaskProject>().HasIndex(p => p.State);
+            modelBuilder.Entity<TaskProject>().Property(p => p.TaskId).ValueGeneratedOnAdd();
+            modelBuilder.Entity<TaskProject>().Property(p => p.RowVersion).IsRowVersion().ValueGeneratedOnAddOrUpdate();
 
             // This is the same to say that Task class has a property named Project that is related to a
             // list of Task in Project class. This sets the entire relationship between Project and Task 
             // so there is no need to set anything at the Project class side.
-            modelBuilder.Entity<Task>().HasOne(p => p.Project).WithMany(p => p.Tasks).HasForeignKey("ProjectId");
+            modelBuilder.Entity<TaskProject>().HasOne(p => p.Project).WithMany(p => p.Tasks).HasForeignKey("ProjectId");
 
             // Entity Project
             modelBuilder.Entity<Project>().HasKey(p => p.ProjectId);

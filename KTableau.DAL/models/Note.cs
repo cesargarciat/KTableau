@@ -25,7 +25,7 @@ namespace KTableau.DAL.models
 
         // Navigations properties
 
-        public Task Task { get; set; }
+        public virtual TaskProject Task { get; set; }
 
 
     }

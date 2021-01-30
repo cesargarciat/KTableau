@@ -30,6 +30,6 @@ namespace KTableau.DAL.models
         public byte[] RowVersion { get; set; }
 
         // Navigation properties
-        public Task Task { get; set; }
+        public virtual TaskProject Task { get; set; }
     }
 }

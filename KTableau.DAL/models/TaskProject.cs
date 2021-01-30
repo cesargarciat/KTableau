@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace KTableau.DAL.models
 {
     [Table("Tasks")]
-    public class Task
+    public class TaskProject
     {
         // (PK)
         public int TaskId { get; set; }
@@ -35,15 +35,15 @@ namespace KTableau.DAL.models
         public byte[] RowVersion { get; set; }
 
         // Navigation properties : Task's list of notes
-        public List<Note> Notes { get; set; }
+        public virtual ICollection<Note> Notes { get; set; }
 
         // NP: Task's list of transitions
-        public List<Transition> Transitions { get; set; }
+        public virtual ICollection<Transition> Transitions { get; set; }
 
         // NP: Task's user 
-        public User TaskUser { get; set; }
+        public virtual User TaskUser { get; set; }
 
-        public Project Project { get; set; }
+        public virtual Project Project { get; set; }
 
     }
 }

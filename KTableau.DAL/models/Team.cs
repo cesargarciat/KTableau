@@ -17,10 +17,10 @@ namespace KTableau.DAL.models
         public byte[] RowVersion { get; set; }
 
         // NP (Relationship to Project)
-        public Project Project { get; set; }
+        public virtual Project Project { get; set; }
 
         // to N
-        public User User{ get; set; }
+        public virtual User User{ get; set; }
 
 
     }
