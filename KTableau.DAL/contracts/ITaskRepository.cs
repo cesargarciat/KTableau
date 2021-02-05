@@ -15,9 +15,11 @@ namespace KTableau.DAL.contracts
         public Task<TaskProject> CreateAsync(TaskProject taskProject);
         public void Delete(TaskProject taskProject);
 
-        public Task<IEnumerable<TaskProject>> GetAllByProject(int projectId);
+        // This section provides methods to retrieve data from relationships.
 
-        public Task<IEnumerable<TaskProject>> GetAllByProject(Project project);
+        public Task<IEnumerable<TaskProject>> GetAllByProjectAsync(int projectId);
+
+        public Task<IEnumerable<TaskProject>> GetAllByProjectASync(Project project);
 
 
     }

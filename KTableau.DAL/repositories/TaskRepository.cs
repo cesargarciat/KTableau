@@ -3,7 +3,6 @@ using KTableau.DAL.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,14 +43,14 @@ namespace KTableau.DAL.repositories
             return await _dbContext.Tasks.Where(p => p.TaskId == taskId).SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<TaskProject>> GetAllByProject(int projectId)
+        public async Task<IEnumerable<TaskProject>> GetAllByProjectAsync(int projectId)
         {
             return await _dbContext.Tasks.Where(p => p.ProjectId == projectId).ToListAsync();
         }
 
-        public async Task<IEnumerable<TaskProject>> GetAllByProject(Project project)
+        public async Task<IEnumerable<TaskProject>> GetAllByProjectASync(Project project)
         {
-            return await this.GetAllByProject(project.ProjectId);
+            return await this.GetAllByProjectAsync(project.ProjectId);
         }
     }
 }

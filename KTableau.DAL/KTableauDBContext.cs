@@ -24,6 +24,10 @@ namespace KTableau.DAL
             
         }
 
+        public KTableauDBContext(KTableauDBContext dbContext)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Connection string

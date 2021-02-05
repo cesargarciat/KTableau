@@ -9,6 +9,12 @@ namespace KTableau.DAL.models
     public class Team
     {
 
+        /**
+         * Do we really need a TeamId ?
+         */
+
+        //public int TeamId { get; set; }
+
         public int UserId { get; set; }
 
         public int ProjectId { get; set; }
